@@ -11,16 +11,12 @@ const Square = () => {
     }, 1000);
     setIntervalId(newIntervalId);
   }
-
-  // Function that stops the colors
   function stopInterval() {
     clearInterval(intervalId);
     setIntervalId(0);
   }
 
-
   const mouseMove = () => {
-    console.log("ka");
     setColor(
       `RGB(
         ${Math.random() * (255 - 0)}, 
@@ -28,7 +24,6 @@ const Square = () => {
         ${Math.random() * (255 - 0)}`
     );
   };
-
 
   const style = {
     width: "255px",
@@ -38,10 +33,14 @@ const Square = () => {
 
   return (
     <div>
-      <div style={style} onMouseEnter={interval} onMouseLeave={stopInterval} onDoubleClick={stopInterval} ></div>
+      <div
+        style={style}
+        onMouseEnter={interval}
+        onMouseLeave={stopInterval}
+        onDoubleClick={stopInterval}
+      ></div>
     </div>
   );
 };
-
 
 export default Square;
